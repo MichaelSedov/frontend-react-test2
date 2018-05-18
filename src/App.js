@@ -1,21 +1,39 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import Header from './components/Header';
+import { connect } from 'react-redux'
+
+import AuthenticatedRouter from './routers/AuthenticatedRouter';
+import { withRouter } from 'react-router-dom'
+import PrivateRoute from './routers/PrivateRoute'
+import UnauthenticatedRouter from './routers/UnauthenticatedRouter';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = { 
+      email: '', 
+      password: '', 
+      loading: false, 
+      isError: false,
+      isAuth: false }
+  }
   render() {
+    console.log("APP PROPS", this.props)
+    console.log("APP STATE", this.state)
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Header />
+        <AuthenticatedRouter />
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  console.log('State', state)
+  return state
+}
+
+export default connect(mapStateToProps)(App);
