@@ -6,7 +6,9 @@ import { getUserProfile } from '../actions/ProfileActions'
 
 class ProfileContainer extends Component {
   componentDidMount() {
-    this.props.getProfile(this.props.authorization.user.id)
+    const { authorization: { user } } = this.props
+
+    this.props.getProfile(user.id)
   }
 
   render() {

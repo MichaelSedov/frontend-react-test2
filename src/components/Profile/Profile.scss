@@ -1,0 +1,38 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: left;
+  box-shadow: 0 3px 30px 0 rgba(0,0,0,.03), 0 3px 40px 0 rgba(0,0,0,.04);
+
+  &__title {
+    font-weight: 600;
+  }
+
+  &__city {
+    margin-bottom: 20px;
+  }
+}
+
+.social-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px 0 10px 50px;
+
+  &__link {
+    display: inline-block;
+  }
+
+  &__img {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    max-width: 32px;
+    height: auto;
+    transform: translateY(-50%);
+  }
+}

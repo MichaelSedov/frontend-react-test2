@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
+import './Loading'
 
 const Loading = function({ ...props }) {
-  console.log("I'm here")
   return <div className="loading">
     <div className="spinner">
       <div className="double-bounce1"></div>
@@ -10,5 +10,4 @@ const Loading = function({ ...props }) {
   </div>
 }
   
-
 export default Loading

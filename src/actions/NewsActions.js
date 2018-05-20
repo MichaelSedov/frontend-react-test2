@@ -1,4 +1,3 @@
-import { Redirect, Route } from 'react-router-dom'
 import { GET_NEWS_REQUEST, GET_NEWS_SUCCESS, GET_NEWS_FAILURE } from './actionTypes'
 
 export function getNews() {

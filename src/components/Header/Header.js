@@ -1,21 +1,27 @@
 import React, { Component } from 'react'
-import { Redirect, NavLink } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 import { LOG_OUT } from '../../actions/actionTypes';
 import { connect } from 'react-redux'
+import './Header.css'
 
 class Header extends Component {
   render() {
     const { authorization: { user }, signOut } = this.props
+
     return (
       <header className="header">
         <ul className="header__menu">
-          <li className="header__menu-item"><NavLink to="/home">Home</NavLink></li>
-          <li className="header__menu-item"><NavLink to="/news">News</NavLink></li>
+          <li className="header__menu-item">
+            <NavLink className="header__link" activeClassName="header__link--active" to="/news">News</NavLink>
+          </li>
           { user && 
-            <li className="header__menu-item"><NavLink to="/profile">Profile</NavLink></li>
+            <li className="header__menu-item">
+              <NavLink className="header__link" activeClassName="header__link--active" to="/profile">Profile</NavLink>
+            </li>
           }
-          <NavLink onClick={user && signOut} to="/login">{user ? "Log out" : "Login"}</NavLink>
-
+          <li className="header__menu-item">
+            <NavLink className="header__link" activeClassName="header__link--active" onClick={user && signOut} to="/login">{user ? "Log out" : "Login"}</NavLink>
+          </li>
         </ul>
       </header>
     )
@@ -30,4 +36,4 @@ const mapDispatchToProps = (dispatch) => ({
   signOut: () => dispatch({ type: LOG_OUT })
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header))

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './News.css'
 
 class News extends Component {
   constructor(props) {
@@ -6,7 +7,7 @@ class News extends Component {
     this.state = {  }
   }
   render() { 
-    const { articles, news } = this.props
+    const { articles } = this.props
 
     return (
       <div>

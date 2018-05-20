@@ -1,4 +1,3 @@
-import { Redirect, Route } from 'react-router-dom'
 import { GET_PROFILE_REQUEST, GET_PROFILE_SUCCESS, GET_PROFILE_FAILURE } from './actionTypes'
 
 export function getUserProfile(id) {

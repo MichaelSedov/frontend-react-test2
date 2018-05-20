@@ -1,11 +1,11 @@
 import React from 'react'
-import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
+import { Route, Switch, withRouter } from 'react-router-dom'
 import PrivateRoute from './PrivateRoute'
 import ProfileContainer from '../containers/ProfileContainer'
 import NewsContainer from '../containers/NewsContainer'
-import LoginContainer from '../containers/Login'
+import LoginContainer from '../containers/LoginContainer'
 
-const AuthenticatedRouter = () => {
+const Routers = () => {
     return (
       <div className='content'>
         <Switch>
@@ -18,4 +18,4 @@ const AuthenticatedRouter = () => {
     )
   }
   
-  export default withRouter(AuthenticatedRouter);
+  export default withRouter(Routers);

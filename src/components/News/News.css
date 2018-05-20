@@ -1,0 +1,13 @@
+.news {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto; }
+
+.article {
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.03), 0 3px 40px 0 rgba(0, 0, 0, 0.04); }
+  .article__title {
+    font-weight: bold; }
+  .article__text {
+    text-align: left; }

@@ -1,0 +1,25 @@
+.header {
+  height: 50px;
+  background-color: #212121;
+  display: flex;
+  align-items: center; }
+  .header__menu {
+    list-style: none;
+    margin: 0;
+    height: 100%; }
+  .header__menu-item {
+    display: inline-block;
+    min-width: 105px;
+    height: 100%;
+    text-transform: uppercase;
+    font-size: 14px; }
+  .header__link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 30px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px; }
+    .header__link--active {
+      background-color: #1890ff; }
